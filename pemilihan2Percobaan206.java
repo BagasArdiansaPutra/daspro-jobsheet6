@@ -4,7 +4,7 @@ public class pemilihan2Percobaan206 {
     public static void main(String[] args) {
         Scanner sc06 = new Scanner(System.in); 
         double diskon;
-        int harga;
+        int harga, potonganQRIS;
         System.out.println("--------------------");
         System.out.println("===== MENU KAFE JTI =====");
         System.out.println("--------------------");
@@ -57,6 +57,23 @@ public class pemilihan2Percobaan206 {
             } else {
                 System.out.println("Member tidak valid");
             }
+            System.out.print("Masukkan jumlah total pembayaran: Rp. ");
+            double totalPembayaran = sc06.nextDouble();
+            double potongan = 1000.0;
+            double totalAkhir;
+            System.out.print("Apakah Anda membayar melalui QRIS? (ya/tidak): ");
+            sc06.nextLine();
+            String metodePembayaran = sc06.nextLine();
+
+            if (metodePembayaran.equalsIgnoreCase("ya")) {
+            totalAkhir = totalPembayaran - potongan;
+            System.out.println("Anda mendapatkan potongan harga Rp. " + potongan);
+            } else {
+            totalAkhir = totalPembayaran;
+            System.out.println("Tidak ada potongan harga.");
+            }
+
+            System.out.println("Total pembayaran setelah potongan: Rp. " + totalAkhir);
             System.out.println("----------------------------------------");
         }
     }
